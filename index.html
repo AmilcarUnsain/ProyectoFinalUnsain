@@ -5,10 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="js/script.js"></script>
+    <link rel="stylesheet" src="css/style.css">
 </head>
 <body>
-    <h1>Simulador de interacción en JavaScript</h1>
 
-    <p>Este simulador permite la interacción con el usuario mediante cuadros de diálogo y la consola en las herramientas del desarrollador, emulando el ingreso a un sitio web a través del procesamiento de datos</p>
+    <div>
+        <h1 id="saludo"> ¡Hola! Estás a un paso de inciar tu trámite para obtener la licencia de conducir del Gobierno de Entre Ríos</h1>
+    </div>
+
+    <p>Necesitamos que completes los siguientes datos para poder continuar</p>
+
+    <form>
+        <h2>País de nacimiento</h2>
+        <input type="text" placeholder="Argentina...">
+        <button>Enviar</button>
+    </form>
+
+    <form>
+        <h2>Provincia o región</h2>
+        <input type="text" placeholder="Entre Ríos">
+        <button>Enviar</button>
+    </form>
+
+    <form>
+        <h2>Localidad</h2>
+        <input type="text" placeholder="Paraná">
+        <button>Enviar</button>
+    </form>
+
+    <form>
+        <h2>Domicilio (nombre de la calle y altura)</h2>
+        <input type="text" placeholder="Av. 9 de Julio 1943">
+        <button>Enviar</button>
+    </form>
+
+    <div>
+        <h3 id="subtitulo1">Obtener nueva licencia de conducir</h3>
+        <button onclick="cambiarTexto1()">Hacé click acá</button>
+    </div>
+
+    <div>
+        <h3 id="subtitulo2">Renovar licencia de conducir vencida</h3>
+        <button onclick="cambiarTexto2()">Hacé click acá</button>
+    </div>
 </body>
 </html>
