@@ -6,28 +6,25 @@ function loguear() {
 
 // // Declaración de variables y constantes
 
-const nombreUsuario = prompt("Ingresá tu nombre y apellido");
-let edadUsuario = prompt("Ingresá tu edad ", 21);
-confirm (`¿Estás seguro que tienes ${edadUsuario} años`)
-parseInt(edadUsuario)
+const submitDatos = (evento) => {
+    evento.preventDefault ();
 
-// Uso del localStorage
+console.log(formulario["nombre"].value);
+}
 
-localStorage.setItem('usuario', nombreUsuario);
-let usuario = localStorage.getItem('usuario');
-console.log(nombreUsuario);
+const formulario = document.getElementById('formulario');
 
-localStorage.setItem('edad', edadUsuario);
-let edad = parseInt(localStorage.getItem('edad del usuario'));
-console.log(edadUsuario);
+formulario.addEventListener("submit",submitDatos);
 
+const usuario = {
+    nombre: formulario["nombre"].value,
+    apellido: formulario["apellido"].value,
+    Nacimiento: formulario["nacimiento"].value,
+    localidad: formulario["localidad"].value,
+    domicilio: formulario["domicilio"].value, 
+}
 
-
-// Uso de JSON
-
-let usuarioJSON = JSON.stringify(nombreUsuario, edadUsuario);
-console.log(usuarioJSON);
-localStorage.setItem('usuario', usuarioJSON);
+console.log (usuario);
 
 // Declaración de condicionales
 

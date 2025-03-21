@@ -4,38 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="js/script.js"></script>
+    <script defer src="js/script.js"></script>
     <link rel="stylesheet" src="css/style.css">
 </head>
 <body>
 
     <div>
-        <h1 id="saludo"> ¡Hola! Estás a un paso de inciar tu trámite para obtener la licencia de conducir del Gobierno de Entre Ríos</h1>
+        <h1 id="saludo"> ¡Hola! En este sitio vas a realizar tu trámite para obtener la licencia de conducir del Gobierno de Entre Ríos</h1>
     </div>
 
     <p>Necesitamos que completes los siguientes datos para poder continuar</p>
 
-    <form>
-        <h2>País de nacimiento</h2>
-        <input type="text" placeholder="Argentina...">
-        <button>Enviar</button>
-    </form>
+    <form id="formulario">
 
-    <form>
-        <h2>Provincia o región</h2>
-        <input type="text" placeholder="Entre Ríos">
-        <button>Enviar</button>
-    </form>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" placeholder="Ezequiel">
 
-    <form>
-        <h2>Localidad</h2>
-        <input type="text" placeholder="Paraná">
-        <button>Enviar</button>
-    </form>
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" placeholder="Unsain">
 
-    <form>
-        <h2>Domicilio (nombre de la calle y altura)</h2>
-        <input type="text" placeholder="Av. 9 de Julio 1943">
+        <label for="nacimiento">Fecha de nacimiento</label>
+        <input type="text" name="nacimiento" placeholder="13/01/1998">
+
+        <label for="localidad">Localidad</label>
+        <input type="text" name="localidad" placeholder="Paraná">
+
+        <label for="domicilio">Domicilio (nombre de la calle y altura)</label>
+        <input type="text" name="domicilio" placeholder="Av. 9 de Julio 1943">
         <button>Enviar</button>
     </form>
 
