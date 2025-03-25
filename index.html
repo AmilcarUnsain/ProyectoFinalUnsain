@@ -1,47 +1,56 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script defer src="js/script.js"></script>
-    <link rel="stylesheet" src="css/style.css">
+    <title>Tienda de camisetas de fútbol</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div>
-        <h1 id="saludo"> ¡Hola! En este sitio vas a realizar tu trámite para obtener la licencia de conducir del Gobierno de Entre Ríos</h1>
-    </div>
+    <header>
+        <h1>Camisetas de fútbol retro</h1>
+    </header>
 
-    <p>Necesitamos que completes los siguientes datos para poder continuar</p>
+    <section class="product-container">
+        <div clas="product" data-id="1" data-name="Camiseta 1" data-price="$90.000">
+            <img src="img/camiseta-brasil.png" alt="Casaca 1">
+            <h2>Camiseta titular de Brasil - Mundial Corea/Japón 2002</h2>
+            <p class="price">$90.000</p>
+            <button class="add-to-cart">Agregar al carrito</button>
+        </div>
 
-    <form id="formulario">
+        <div clas="product" data-id="2" data-name="Camiseta 2" data-price="$110.000">
+            <img src="img/camiseta-argentina.png" alt="Casaca 2">
+            <h2>Camiseta alternativa de Argentina - Mundial México 1986</h2>
+            <p class="price">$110.000</p>
+            <button class="add-to-cart">Agregar al carrito</button>
+        </div>
 
-        <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" placeholder="Ezequiel">
+        <div clas="product" data-id="3" data-name="Camiseta 3" data-price="$95.000">
+            <img src="img/camiseta-alemania.png" alt="Casaca 3">
+            <h2>Camiseta titular de Alemania - Mundial Brasil 2014</h2>
+            <p class="price">$95.000</p>
+            <button class="add-to-cart">Agregar al carrito</button>
+        </div>
 
-        <label for="apellido">Apellido</label>
-        <input type="text" name="apellido" placeholder="Unsain">
+        <div clas="product" data-id="4" data-name="Camiseta 4" data-price="$100.000">
+            <img src="img/camiseta-italia.png" alt="Casaca 4">
+            <h2>Camiseta titular de Italia - Mundial España 1982</h2>
+            <p class="price">$100.000</p>
+            <button class="add-to-cart">Agregar al carrito</button>
+        </div>
 
-        <label for="nacimiento">Fecha de nacimiento</label>
-        <input type="text" name="nacimiento" placeholder="13/01/1998">
+    </section>
 
-        <label for="localidad">Localidad</label>
-        <input type="text" name="localidad" placeholder="Paraná">
+    <section class="cart">
+        <h2>Carrito de compras</h2>
+        <ul class="cart-list"></ul>
+        <p class="total">Total de la compra: $<span> 0.00</span></p>
+        <button class="clear-cart">Limpiar carrito</button>
+    </section>
 
-        <label for="domicilio">Domicilio (nombre de la calle y altura)</label>
-        <input type="text" name="domicilio" placeholder="Av. 9 de Julio 1943">
-        <button>Enviar</button>
-    </form>
-
-    <div>
-        <h3 id="subtitulo1">Obtener nueva licencia de conducir</h3>
-        <button onclick="cambiarTexto1()">Hacé click acá</button>
-    </div>
-
-    <div>
-        <h3 id="subtitulo2">Renovar licencia de conducir vencida</h3>
-        <button onclick="cambiarTexto2()">Hacé click acá</button>
-    </div>
 </body>
 </html>
