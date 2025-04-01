@@ -9,11 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+    emailjs.init('Q5DgfR25rWVqK60mh')
+    </script>
 </head>
 <body>
 
     <header>
-        <h1>Camisetas de fútbol retro</h1>
+        <h1>Camisetas de Fútbol Retro</h1>
     </header>
 
     <section class="product-container">
@@ -22,6 +27,7 @@
             <h2>Camiseta titular de Brasil - Mundial Corea/Japón 2002</h2>
             <p class="price">$90.000</p>
             <button class="add-to-cart">Agregar al carrito</button>
+            <button class="remove-item" data-id="1">Eliminar producto</button>
         </div>
 
         <div class="product" data-id="2" data-name="Camiseta Argentina '86" data-price="$110.000">
@@ -29,6 +35,7 @@
             <h2>Camiseta alternativa de Argentina - Mundial México 1986</h2>
             <p class="price">$110.000</p>
             <button class="add-to-cart">Agregar al carrito</button>
+            <button class="remove-item" data-id="2">Eliminar producto</button>
         </div>
 
         <div class="product" data-id="3" data-name="Camiseta Alemania '06" data-price="$95.000">
@@ -36,6 +43,7 @@
             <h2>Camiseta titular de Alemania - Mundial Brasil 2014</h2>
             <p class="price">$95.000</p>
             <button class="add-to-cart">Agregar al carrito</button>
+            <button class="remove-item" data-id="3">Eliminar producto</button>
         </div>
 
         <div class="product" data-id="4" data-name="Camiseta Italia '82" data-price="$100.000">
@@ -43,6 +51,7 @@
             <h2>Camiseta titular de Italia - Mundial España 1982</h2>
             <p class="price">$100.000</p>
             <button class="add-to-cart">Agregar al carrito</button>
+            <button class="remove-item" data-id="4">Eliminar producto</button>
         </div>
 
     </section>
@@ -51,17 +60,52 @@
         <h2>Carrito de compras</h2>
         <ul class="cart-list"></ul>
         <p class="total">Total de la compra: $<span> 0.00</span></p>
-        <button class="clear-cart">Limpiar carrito</button>
+        <button class="clear-cart" onclick="return limpia()">Limpiar carrito</button>
         <button class="buy-cart" onclick="return compra()">Comprar</button>
+
+        <script>
+                 function limpia () {
+        Swal.fire(
+            'Tu carrito de compras está vacío',
+            'Vuelve al sitio para seguir comprando',
+        )};
+        </script>
 
         <script>
              function compra(){
         Swal.fire(
             '¡Muchas gracias por tu compra!',
             'Estás a un paso de finalizar',
-        )}
+        )};
         </script>
 
+    </section>
+
+    <section>
+
+        <h3>Esribinos tu consulta</h3>
+        <form id="form">
+            <div class="field">
+              <label for="asunto">ASUNTO</label>
+              <input type="text" name="asunto" id="asunto" placeholder="Mayoristas, modelos, estampados, etc.">
+            </div>
+            <div class="field">
+              <label for="nombre">NOMBRE</label>
+              <input type="text" name="nombre" id="nombre" placeholder="Escriba aquí su nombre">
+            </div>
+            <div class="field">
+              <label for="mensaje">MENSAJE</label>
+              <input type="text" name="mensaje" id="mensaje" placeholder="Escriba aquí su mensaje">
+            </div>
+            <div class="field">
+              <label for="email">EMAIL</label>
+              <input type="text" name="email" id="email" placeholder="amilcarunsain98@hotmail.com">
+            </div>
+          
+            <div class="button-submit">
+                <input type="submit" id="button" value="Enviar correo electrónico" >
+            </div>
+        </form>
     </section>
 </body>
 </html>

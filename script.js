@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let cart = [];
 
+    loadCartFromLocalStorage();
+
     products.forEach(product => {
         const addToCartButton = product.querySelector('.add-to-cart');
         addToCartButton.addEventListener('click', () => addToCart(product));
@@ -29,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         updateCartUI();
+        saveCartToLocalStorage();
     }
 
     function updateCartUI() {
@@ -44,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
         totalElement.textContent = `${total.toFixed(2)}`;
 
         const removeButtons = document.querySelectorAll('.remove-item');
-
         removeButtons.forEach(button => {
             button.addEventListener('click', () => removeItem(button.dataset.id));
         });
@@ -53,10 +55,45 @@ document.addEventListener('DOMContentLoaded', function() {
     function clearCart() {
         cart = [];
         updateCartUI();
+        saveCartToLocalStorage();
     }
 
     function removeItem(productId) {
         cart = cart.filter(item => item.id !== productId);
         updateCartUI();
+        saveCartToLocalStorage();
     }
+
+    function saveCartToLocalStorage() {
+        localStorage.setItem('carrito', JSON.stringify(cart));
+    }
+
+    function loadCartFromLocalStorage() {
+        const storedCart = localStorage.getItem('carrito');
+        if (storedCart) {
+            cart = JSON.parse(storedCart);
+            updateCartUI();
+        }
+    }
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_0ao880e';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar correo electrónico';
+      alert('¡Correo enviado exitosamente!');
+    }, (err) => {
+      btn.value = 'Enviar correo electrónico';
+      alert(JSON.stringify(err));
+    });
+});
+
 });
